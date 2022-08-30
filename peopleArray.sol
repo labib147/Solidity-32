@@ -15,15 +15,18 @@ contract Person{
         uint256 fNum;
         // serial of the array push depends on which variable was defined first
     }
-    uint256[] public fNumList;
-    People [] public people; // "people" is a variable of the array
+    uint256[] public fNumList;  // "fNumList" is the name of the array fNumList[]
+    People [] public peopleArr; // "peopleArr" is the name of the array People[]
 
     function addPerson(string memory _name, uint256 _fNum) public {
         // creating newPerson object then push
         //People memory newPerson = People({name: _name, fNum: _fNum}); // Explicit definition
-        People memory newPerson = People(_name, _fNum); // Remove description also {}
-        people.push(newPerson);
-        //people.push(People(_name, _fNum));  // replace newPerson with the R.H.S.
+        
+        People memory newPerson = People(_name, _fNum); // Remove description & {}
+        peopleArr.push(newPerson);
+
+        //peopleArr.push(People(_name, _fNum));  // replace newPerson with the R.H.S.
+
         // Single line push     
     }
 }
