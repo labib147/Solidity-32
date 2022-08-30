@@ -26,7 +26,6 @@ contract Person{
         peopleArr.push(newPerson);
 
         //peopleArr.push(People(_name, _fNum));  // replace newPerson with the R.H.S.
-
         // Single line push     
     }
 }
