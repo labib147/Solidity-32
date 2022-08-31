@@ -8,6 +8,8 @@ import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 contract fundMe {
 
     uint256 public  minUSD = 50 * 1e18;
+    address[] public  funders;
+    mapping (address=>uint256) public addressToAmountFunded;
 
     function fund() public payable {
 
@@ -16,6 +18,9 @@ contract fundMe {
 
         // If the first section is false then revert back with the error in the string ""
         // Revert: Undo any action before, send remaining gas back
+
+        funders.push(msg.sender);
+        addressToAmountFunded[msg.sender] = msg.value;
 
     }
 
